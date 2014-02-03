@@ -1,27 +1,5 @@
-# docker-wordpress-nginx
-
-A Dockerfile that installs the latest wordpress, nginx, php-apc and php-fpm.
-
-NB: A big thanks to [jbfink](https://github.com/jbfink/docker-wordpress) who did most of the hard work on the wordpress parts!
-
-You can check out his [Apache version here](https://github.com/jbfink/docker-wordpress).
-
-## Installation
-
+# docker-wordpress-nginx A Dockerfile that installs the latest wordpress, nginx, php-apc and php-fpm.  NB: A big thanks to [jbfink](https://github.com/jbfink/docker-wordpress) who did most of the hard work on the wordpress parts!  You can check out his [Apache version here](https://github.com/jbfink/docker-wordpress).  ## Installation ``` $ git clone https://github.com/eugeneware/docker-wordpress-nginx.git $ cd docker-wordpress-nginx $ sudo docker build -t="docker-wordpress-nginx" .  ``` ## Usage To spawn a new instance of wordpress: ```bash $ sudo docker run -p 80:80 -d docker-wordpress-nginx
 ```
-$ git clone https://github.com/eugeneware/docker-wordpress-nginx.git
-$ cd docker-wordpress-nginx
-$ sudo docker build -t="docker-wordpress-nginx" .
-```
-
-## Usage
-
-To spawn a new instance of wordpress:
-
-```bash
-$ sudo docker run -p 80 -d docker-wordpress-nginx
-```
-
 You'll see an ID output like:
 ```
 d404cc2fa27b
