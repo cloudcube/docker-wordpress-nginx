@@ -1,14 +1,11 @@
 FROM cloudcube/base
 MAINTAINER DavidZhao <zhaohaibin@outlook.com>
-REFRESHED_AT 2015-07-20 10:15
+ENV REFRESHED_AT 2015-07-20 10:15
 
 RUN apt-get update
 RUN apt-get -y upgrade
 
 # Keep upstart from complaining
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -s /bin/true /sbin/initctl
-
 # Basic Requirements
 RUN apt-get -y install mysql-client nginx php5-fpm php5-mysql php-apc pwgen python-setuptools curl git unzip
 
