@@ -37,7 +37,7 @@ RUN /usr/bin/easy_install supervisor
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Install Wordpress
-ADD http://cn.wordpress.org/wordpress-3.8.1-zh_CN.tar.gz /wordpress.tar.gz
+ADD https://cn.wordpress.org/wordpress-4.2.2-zh_CN.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz -C /usr/share/nginx
 RUN mv /usr/share/nginx/www/5* /usr/share/nginx/wordpress
 RUN rm -rf /usr/share/nginx/www
