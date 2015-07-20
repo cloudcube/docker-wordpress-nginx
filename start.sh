@@ -13,8 +13,8 @@ if [ "$WP_DB_HOST"x = "localhost"x];then
 fi
 
 
-mv /usr/share/nginx/wordpress/* /usr/share/nginx/www/*
-chown -R www-data:www-data /usr/share/nginx/www
+mv /usr/share/nginx/wordpress/* /usr/share/nginx/html/*
+chown -R www-data:www-data /usr/share/nginx/html
 
 if [ ! -f /usr/share/nginx/www/wp-config.php ]; then
   #mysql has to be started this way as it doesn't work to call from /etc/init.d
