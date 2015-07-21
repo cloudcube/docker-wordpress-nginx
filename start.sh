@@ -27,7 +27,7 @@ if [ ! -f /usr/share/nginx/html/wp-config.php ]; then
   echo $WP_DB_PASSWORD > /mysql-root-pw.txt
   echo $WP_PASSWORD > /wordpress-db-pw.txt
 
-  sed -e "s/database_name_here/$WP_DB_USERNAME/
+  sed -e "s/database_name_here/$WP_DB_NAME/
   s/DB_HOST/$WP_DB_HOST/
   s/username_here/$WP_DB_USERNAME/
   s/password_here/$WP_DB_PASSWORD/
