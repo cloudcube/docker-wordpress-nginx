@@ -29,7 +29,7 @@ if [ ! -f /usr/share/nginx/html/wp-config.php ]; then
   echo $WP_PASSWORD > /wordpress-db-pw.txt
 
   sed -e "s/database_name_here/$WP_DB_NAME/
-  s/DB_HOST/$WP_DB_HOST/
+  s/localhost/$WP_DB_HOST/
   s/username_here/$WP_DB_USERNAME/
   s/password_here/$WP_DB_PASSWORD/
   /'AUTH_KEY'/s/put your unique phrase here/`pwgen -c -n -1 65`/
