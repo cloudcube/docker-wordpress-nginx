@@ -13,7 +13,7 @@ if [ "$WP_DB_HOST"x -eq  "localhost"x ] ; then
 fi
 
 
-
+chmod 777 -R /usr/share/nginx/html
 mv /usr/share/nginx/wordpress/* /usr/share/nginx/html/
 chown -R www-data:www-data /usr/share/nginx/html
 
