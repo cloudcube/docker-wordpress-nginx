@@ -33,6 +33,7 @@ ADD ./config/php5-fpmd.conf /etc/supervisor/conf.d/php5-fpmd.conf
 ADD https://cn.wordpress.org/wordpress-4.2.2-zh_CN.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz -C /usr/share/nginx
 RUN mv /usr/share/nginx/html/5* /usr/share/nginx/wordpress
+RUN rm -rf /usr/share/nginx/html/*
 
 VOLUME ["/usr/share/nginx/html"]
 
