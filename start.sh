@@ -8,16 +8,17 @@ WP_DB_USERNAME=${WP_DB_USERNAME:-wordpress}
 WP_DB_PASSWORD=${WP_DB_PASSWORD:-`pwgen -c -n -1 12`}
 WP_PASSWORD=${WP_PASSWORD:-`pwgen -c -n -1 12`}
 
-if [ "$WP_DB_HOST"x -eq  "localhost"x ] ; then
+if [ "$WP_DB_HOST" -eq  "localhost" ] ; then
     exit -1
 fi
 
 
-chmod 777 -R /usr/share/nginx/html
-mv /usr/share/nginx/wordpress/* /usr/share/nginx/html/
-chown -R www-data:www-data /usr/share/nginx/html
-
 if [ ! -f /usr/share/nginx/html/wp-config.php ]; then
+
+
+  chmod 777 -R /usr/share/nginx/html
+  mv /usr/share/nginx/wordpress/* /usr/share/nginx/html/
+  chown -R www-data:www-data /usr/share/nginx/html
   #mysql has to be started this way as it doesn't work to call from /etc/init.d
 
   # Here we generate random passwords (thank you pwgen!). The first two are for mysql users, the last batch for random keys in wp-config.php
