@@ -15,10 +15,6 @@ fi
 
 if [ ! -f /usr/share/nginx/html/wp-config.php ]; then
 
-
-  sudo chmod 777 -R /usr/share/nginx/html
-  sudo mv /usr/share/nginx/wordpress/* /usr/share/nginx/html/
-  sudo chown -R www-data:www-data /usr/share/nginx/html
   #mysql has to be started this way as it doesn't work to call from /etc/init.d
 
   # Here we generate random passwords (thank you pwgen!). The first two are for mysql users, the last batch for random keys in wp-config.php
