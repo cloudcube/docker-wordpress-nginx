@@ -14,6 +14,11 @@ fi
 
 
 if [ ! -f /usr/share/nginx/html/wp-config.php ]; then
+    
+ sudo cp -rf -p /usr/share/nginx/wordpress/* /usr/share/nginx/html/
+ sudo chown -R www-data:www-data /usr/share/nginx/html
+    
+    
 
   #mysql has to be started this way as it doesn't work to call from /etc/init.d
 
