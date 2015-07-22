@@ -35,8 +35,8 @@ RUN tar xvzf /wordpress.tar.gz -C /usr/share/nginx
 RUN mv /usr/share/nginx/html/5* /usr/share/nginx/wordpress
 RUN rm -rf /usr/share/nginx/html
 
-RUN mv /usr/share/nginx/wordpress /usr/share/nginx/html
-RUN chown -R www-data:www-data /usr/share/nginx/html
+# RUN mv /usr/share/nginx/wordpress /usr/share/nginx/html
+# RUN chown -R www-data:www-data /usr/share/nginx/html
 
 
 
