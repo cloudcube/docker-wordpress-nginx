@@ -33,9 +33,12 @@ ADD ./config/php5-fpmd.conf /etc/supervisor/conf.d/php5-fpmd.conf
 ADD https://cn.wordpress.org/wordpress-4.2.2-zh_CN.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz -C /usr/share/nginx
 RUN mv /usr/share/nginx/html/5* /usr/share/nginx/wordpress
-RUN rm -rf /usr/share/nginx/html/*
+RUN rm -rf /usr/share/nginx/html
 
-VOLUME ["/usr/share/nginx/html"]
+RUN mv /usr/share/nginx/wordpress /usr/share/nginx/html
+RUN chown -R www-data:www-data /usr/share/nginx/html
+
+
 
 # Wordpress Initialization and Startup Script
 ADD ./start.sh /start.sh
@@ -44,5 +47,8 @@ RUN chmod 755 /start.sh
 # private expose
 EXPOSE 80
 EXPOSE 22
+
+
+VOLUME ["/usr/share/nginx/html"]
 
 CMD ["/bin/bash", "/start.sh"]
